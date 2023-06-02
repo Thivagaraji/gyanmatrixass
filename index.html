@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TRACKER</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<style>
+		.error-message {
+			color: red;
+			margin-top: 4px;
+		}
+	</style>
+	<script>
+		function redirect() {
+			var email = document.getElementById('email').value;
+			var password = document.getElementById('password').value;
+			var errorMessage = document.getElementById('error-message');
+
+
+			if (email === 'abc@123' && password === 'password') {
+				errorMessage.textContent = ''; 
+				window.location.href = 'home.html'; 
+				return false;
+			} else {
+				errorMessage.textContent = 'Invaild Credentials'; 
+				return false; 
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="heading">
+		<img class="logo" src="img.jpg">
+	</div>
+	<div class="wrapper">
+		<div class="form">
+			<form onsubmit="return redirect()">
+				<h1>Log In</h1>
+				<span>
+					<input type="text" placeholder="Your email" id="email" name="">
+				</span><br>
+				<span>
+					<input type="password" placeholder="Your password" id="password" name="">
+				</span><br>
+				<button class="submit">Log In</button>				
+				<div class="error-message" id="error-message"></div>
+			</form>
+		</div>
+	</div>
+	<footer>
+        <h4>Tracker</h4>
+        <line></line>
+        <p>&copy; 2022 Tracker. All rights reserved.</p>
+        <home>Home</home>
+        <about>About Us</about>
+        <contact>Contact Us</contact>
+    </footer>
+</body>
+</html>
